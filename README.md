@@ -12,20 +12,20 @@ sudo systemctl start ollama
 
 ## `Pulling the Model`
 
-```sh
+```maxima
 ollama pull SIGJNF/deepseek-r1-671b-1.58bit
 pulling manifest
 ```
 
 ## `Configuring the Model File`
 
-```sh
+```nginx
 vim cpu.modelfile
 ```
 
 ### Add the following content:
 
-```txt
+```smalltalk
 FROM SIGJNF/deepseek-r1-671b-1.58bit:latest
 
 PARAMETER num_gpu 0
@@ -34,13 +34,13 @@ SYSTEM """A conversation between User and Assistant. The user asks a question, a
 
 ## `Creating the Model`
 
-```sh
+```maxima
 ollama create SIGJNF/deepseek-r1-671b-1.58bit:cpu -f cpu.modelfile
 ```
 
 ## `Additional Configurations`
 
-```sh
+```bash
 # Disable GPU-related settings
 unset GGML_CUDA_ENABLE_UNIFIED_MEMORY
 unset OLLAMA_GPU_OVERHEAD
@@ -52,11 +52,12 @@ export OLLAMA_LOAD_TIMEOUT=360m
 
 ## `Starting Ollama (If Not Already Running)`
 
-```sh
+```ebnf
 ollama serve
 ```
 
 ## `Running the Model`
 
-```sh
+```maxima
 ollama run SIGJNF/deepseek-r1-671b-1.58bit:cpu
+```
